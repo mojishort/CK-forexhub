@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal</title>
+    <link rel="stylesheet" href="portal.css">
+</head>
+<body>
+    <header>
+        <h1>Student Portal</h1>
+        <ion-icon id="sidebar-toggle" name="grid"></ion-icon>
+        <div class="notification-wrapper">
+          <ion-icon name="notifications-circle-outline" id="notification-bell"></ion-icon>
+          <div class="notification-dropdown">
+            <!-- Notifications content goes here -->
+            <ul>
+              <!-- Notification items will be added dynamically -->
+            </ul>
+          </div>
+          <div class="user-info">
+            <span id="user-name"><?php echo $name; ?></span>
+          </div>
+        </div>
+      </header>
+    
+    <nav id="sidebar" class="sidebar">
+        <ul>
+            <li><ion-icon name="home"></ion-icon><a href="portal.html">Dashboard</a></li>
+            <li><ion-icon name="cash-outline"></ion-icon><a href="finances.html">Financials</a></li>
+            <li><ion-icon name="person-circle"></ion-icon><a href="profile.html">Profile</a></li>
+            <li><ion-icon name="settings"></ion-icon><a href="settings.html">Reset Password</a></li>
+        </ul>
+        <div class="logoutbtn">
+          <ion-icon name="log-out" class="log-out"></ion-icon><button id="logoutBtn">Logout</button>
+      </div>
+    </nav>
+    <main class="profile">
+        <h2>User Profile</h2>
+        <div>
+            <label for="name">Name:</label>
+            <span id="name"><?php echo $name; ?></span><br><br>
+            <label for="email">Email:</label>
+            <span id="email"><?php echo $email; ?></span><br><br>
+            <label for="phone">Phone:</label>
+            <span id="phone"><?php echo $phone; ?></span><br><br>
+        </div>
+        <button id="updateButton">Update Profile</button>
+        <div id="updateFormContainer">
+            <form id="updateForm">
+                <span id="closeForm">
+                    <ion-icon name="close-circle-outline"></ion-icon>
+                </span>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"  required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone"  required><br><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+  
+    <script src="portal.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

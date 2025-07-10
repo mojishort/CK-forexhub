@@ -1,0 +1,117 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-image: url(img/bluetreejpg.jpg);
+}
+
+.header {
+    background-color: #f4f4f4;
+    background-image: url(img/bluetreejpg.jpg);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 100px;
+    grid-template-areas:
+        "nav nav nav nav nav nav nav nav nav nav nav nav";
+}
+.header img.logo {
+  max-width: 200px;
+  margin-top: 20px;
+  margin-top: 20px; /* increase this value to make the logo larger */
+}
+.logo {
+  width: 90%;
+  height: 90%;
+  max-width: 350px;
+  max-height:fit-content;
+  object-fit: cover;
+  margin-top: 20px;
+  padding: 20px;
+  
+}
+
+nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    text-emphasis-color: white;
+}
+
+nav img {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-emphasis-color: white;
+}
+
+.nav-links ul {
+    display: flex;
+}
+
+.nav-links li {
+    padding: 0 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem;
+  }
+  
+  nav a:hover {
+    background-color: #555;
+  }
+
+
+.flex-container{
+    align-items:centre;
+    justify-content:centre;
+    color: #fff;
+}
+.flex-container h1{
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+}
+.flex-container p{
+    padding:5px;
+    margin:10px;
+    text-align:center;
+}
+.container{
+    display:flex;
+    justify-content: space-between;
+    align-items: centre;
+    height: 50vh;
+}
+.box {
+    width: 400px;
+    height:500px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: centre;
+    margin: 80px ; /* center the box horizontally */
+    float:left;
+    color:white;
+    background-color:blue;
+  }
+  

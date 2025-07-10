@@ -1,0 +1,318 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: blue;
+}
+/* Styling for header section */
+
+header {
+    background:transparent;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 30px;
+
+}
+.navigation {
+    display: flex;
+    align-items: center;
+    float: right;
+    margin-right: 60px;
+    margin-top: 20px;
+}
+
+.navigation a {
+    color: #fff;
+    padding: 0 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #ccc;
+}
+
+.nav-links {
+    float: center;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px; /* Add space between links */
+    font-size: 18px;
+}
+
+
+
+.animated-border {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    animation: zoomInOut 5s ease-in-out infinite alternate;
+}
+
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.right {
+    text-align: right;
+}
+
+/* Styling for flicker link */
+.flicker {
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    animation: flicker 1s linear infinite;
+}
+
+/* Keyframes for flicker animation */
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center items horizontally */
+    gap: 10px; /* Add some space between items */
+    padding: 0 20px; /* Add padding to the left and right */
+    margin-top: 10px;
+}
+   
+
+.video-container {
+ 
+  
+  margin-bottom: 20px;
+  height: 50%;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-right: 10px;
+  width: calc(100%-20px);
+  flex: 1 0 calc(33.333% - 10px);
+  background-color: #ddd;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.video-container video {
+  width: 60%;
+  height: 50%;
+  object-fit: center;
+  border-radius: 10px;
+ 
+}
+.video-container:nth-child(1n+1){
+    margin-right: 20px;
+}
+.video-description {
+    position: absolute;
+    bottom: 0;
+    left: 125px;
+    right: 0;
+    background-color: rgb(6, 1, 1);
+    color: rgb(252, 252, 253);
+    padding: 100px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin-left: 100px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    justify-content: flex-start;
+    float: left;
+    word-spacing: 2px; /* adds 2 pixels of space between words */
+    align-items: left;
+    border-radius: 10px;
+  }
+  
+  .video-container:hover .video-description {
+    opacity: 1;
+  }
+
+/* Styling for nav links */
+.Events a {
+    text-decoration: none;
+    color: rgb(236, 236, 240);
+}
+
+
+.ContactUs {
+    margin-top: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    float: inline-end;
+
+}
+
+
+.contact-info {
+    margin-top: 2px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 40px;
+    font-weight: bold;
+}
+.contact-info p {
+    color: white;
+}
+.contact-info ion-icon{
+    font-size: 15px;
+    margin-right: 6px;
+}
+.video-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.close-btn{
+    background-image: url(/click.jpg);
+}
+.video-container {
+    width: 20%; /* Reduced video container width */
+    margin: 3%; /* Add some margin for better alignment */
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 40%; /* Fill the available width */
+    height: auto; /* Adjust height automatically */
+
+}
+
+  .video-preview {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .video-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .description {
+    margin-top: 10px;
+  }
+
+  .video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .video-modal video {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+  }
+
+  .video-modal.active {
+    display: flex;
+  }
+
+  .video-container {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .video-container img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+
+  }
+  .poster{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .poster-container {
+    width: 20%; /* Reduced video container width */
+    margin: 10%; /* Add some margin for better alignment */
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .poster-img {
+    width: 80%; /* reduces the width of the image to 50% */
+    height: auto; /* maintains the aspect ratio of the image */
+    float: right; /* floats the image to the left side */
+    margin-right: 10px; /* adds some space between the image and the text */
+    margin-left: 100px;
+  }
+
+.poster-container:nth-child(1n+1){
+    margin-left: 20px;
+}
+  .poster .social-handles {
+    position: relative; /* position the div relative to the container */
+    top: 0; /* align the div to the top of the container */
+    right: 10px;
+    left: 10%; /* align the div to the right side of the container */
+    width: 80%; /* reduces the width of the div to 30% of the container */
+    height: 100%; /* sets the height of the div to 100% of the container */
+    background-color: rgba(17, 9, 233, 0.995); /* adds a semi-transparent background color */
+    color: #fff;
+  }

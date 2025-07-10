@@ -1,0 +1,455 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  header {
+    background-color: #082447;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+  
+  .notification-wrapper {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .notification-wrapper ion-icon,
+  .notification-wrapper .notification-dropdown,
+  .notification-wrapper .user-info {
+    margin-right: 10px;
+  }
+  
+  #notification-bell {
+    cursor: pointer;
+    position: relative;
+    font-size: 20px;
+  }
+  
+  .notification-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 200px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+  
+  .notification-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .notification-dropdown ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .notification-dropdown ul li:last-child {
+    border-bottom: none;
+  }
+  
+  .sidebar {
+    margin-top: 60px;
+    background-color: #d3d2d2;
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    left: -200px;
+    transition: left 0.3s ease;
+    padding: 20px;
+  }
+  
+  .sidebar.active {
+    left: 0;
+    width: 170px;
+  }
+  
+  #sidebar-toggle {
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  .sidebar ul {
+    padding: 0; /* Remove default padding */
+    margin-top: 15px;
+}
+
+.sidebar ul li {
+  list-style: none;
+  margin-bottom: 20px;
+  padding-left: 0;
+  display: flex; 
+  align-items: center;
+}
+
+.sidebar ul li ion-icon {
+  font-size: 20px;
+  margin-right: 10px;
+  flex-shrink: 0; /* Prevent icons from shrinking */
+}
+
+.sidebar ul li a {
+  margin-top: 8px;
+  color: #333;
+  text-decoration: none;
+  display: inline-block; /* Ensure links behave like block elements */
+}
+
+
+.logoutbtn {
+  display: flex; 
+  align-items: center;
+  margin-top: 150px; 
+}
+.logoutbtn ion-icon{
+  margin-top: 15px;
+  font-size: 20px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+.logoutbtn button {
+    width: 90px;
+    height: 30px;
+    margin-top: 15px;
+    background-color: #082447;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    align-items: center; /* Align icon and text vertically */
+}
+  
+  .log-out {
+    margin-right: 5px;
+  }
+  main {
+    margin-right: 20px;
+    margin-top: 20px;
+    flex: 1; /* Take remaining space */
+    padding-left: 60px;
+    padding-top: 60px;
+    overflow-y: auto;
+    transition: padding-left 0.3s ease;
+  }
+  
+  main.active {
+    padding-left: 220px; /* Increase padding when sidebar is active */
+    width: calc(100% - 250px); /* Adjust width to accommodate the sidebar */
+  }
+  
+  .grid-container {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+  }
+p {
+    padding: 0 10px;
+    margin-top: 1px;
+
+  }
+
+  .topic1,
+  .topic2,
+  .topic3,
+  .topic4 {
+    transition: background-color 0.3s ease; /* Add this line */
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .topic1:hover,
+  .topic2:hover,
+  .topic3:hover,
+  .topic4:hover {
+    background-color: #e9e5e5; /* Add this line */
+  }
+  .topic2 button,
+  .topic3 button,
+  .topic4 button,
+  .topic1 button {
+    position: absolute; /* Make the button position absolute */
+    bottom: 0; /* Align the button to the bottom with 5px offset */
+    left: 10px; /* Align the button to the left with 3px offset */
+    width: 100px;
+    height: 35px;
+    background-color: #082447;
+    color: white;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .profile button[type="submit"]:hover,
+  #updateButton:hover,
+  .password-form input[type="submit"]:hover,
+  #payButton:hover,
+  .logoutbtn button:hover,
+  .topic1 button:hover,
+  .topic2 button:hover,
+  .topic3 button:hover,
+  .topic4 button:hover {
+    background-color: rgb(142, 128, 9);
+    color: white;
+    border: 1px solid rgb(200, 231, 231);
+    border-radius: 5px;
+    transition: background-color 2s ease;
+  }
+.message {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+  }
+  
+/* Close icon styles */
+.close-icon {
+    position: absolute;
+    top: 0; /* Adjust the position to cover the top corner */
+    right: 0; /* Adjust the position to cover the top corner */
+    cursor: pointer;
+    font-size: 20px;
+    color: #fff;
+    background: black;
+    border: 1px solid rgb(23, 23, 23);
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 5px; /* Add padding to ensure the icon is visible */
+  }
+  .close-icon:hover {
+    background-color: #555; /* Change background color on hover */
+  }  
+
+/* Message content styles */
+.message-content {
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 400px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+  }
+  /* Close button styles (hidden) */
+  #closeButton {
+    display: none;
+  }
+  
+  
+  #payButton {
+    width: 100px;
+    height: 35px;
+    background-color: rgb(124, 206, 124);
+    margin-top: 10px;
+    border-radius: 4px;
+  }
+  .settings-container {
+    position: relative;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .sidebar.active ~ .settings-container {
+    z-index: -1; /* Move it below other content when sidebar is active */
+}
+  .password-form {
+    width: 100%; /* Take full width of the container */
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-sizing: border-box; /* Include padding and border in width calculation */
+  }
+  
+.password-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.password-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+.password-input {
+  position: relative;
+}
+
+.password-form input[type="password"],
+.password-form input.text {
+  position: relative;
+  width: 100%;
+  padding-right: 38px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+.password-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #082447;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.password-form input[type="submit"]:focus {
+    outline: none;
+}
+
+
+.password-toggle {
+  position: absolute;
+  top: 40%;
+  right: 10px; 
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: black; 
+}
+
+.password-input.show-password .password-toggle {
+  color: #007bff; 
+}
+.password-toggle:hover {
+  color: black; 
+}
+
+.profile h2{
+  position: absolute;
+  top: 90px;
+  left: 35%;
+  font-size: 20px
+
+}
+#updateButton {
+  position: absolute;
+  top: 100px;
+  right: 10px;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+  background-color: #082447;
+  color: white;
+}
+
+#updateFormContainer {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  margin-top: 20px;
+  transform: translate(-50%, -50%);
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#closeForm {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.profile button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #082447;
+  color: white;
+  cursor: pointer;
+}
+
+#totalBilledMoney {
+  height: 60px;
+  background-color: #f2f2f2;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+#totalBilledMoney h2 {
+  color: #333;
+}
+
+#paymentDetails {
+  height: 100px;
+  background-color: #e8e8e8;
+  padding: 20px;
+}
+
+#paymentDetails h2 {
+  color: #555;
+}
+
+#paymentDetails ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#paymentDetails li {
+  margin-bottom: 10px;
+}

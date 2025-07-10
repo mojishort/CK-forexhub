@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal</title>
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body>
+    <header>
+        <h1>Student Portal</h1>
+        <ion-icon id="sidebar-toggle" name="grid"></ion-icon>
+        <div class="notification-wrapper">
+          <ion-icon name="notifications-circle-outline" id="notification-bell"></ion-icon>
+          <div class="notification-dropdown">
+            <!-- Notifications content goes here -->
+            <ul>
+              <!-- Notification items will be added dynamically -->
+            </ul>
+          </div>
+          <div class="user-info">
+            <span id="user-name"></span>
+          </div>
+        </div>
+      </header>
+    
+    <nav id="sidebar" class="sidebar">
+        <ul>
+            <li><ion-icon name="home"></ion-icon><a href="portal.html">Dashboard</a></li>
+            <li><ion-icon name="cash-outline"></ion-icon><a href="finances.html">Financials</a></li>
+            <li><ion-icon name="person-circle"></ion-icon><a href="profile.html">Profile</a></li>
+            <li><ion-icon name="settings"></ion-icon><a href="settings.html">Reset Password</a></li>
+        </ul>
+        <div class="logoutbtn">
+          <ion-icon name="log-out" class="log-out"></ion-icon><button id="logoutBtn">Logout</button>
+      </div>
+    </nav>
+    <main class="payments">
+      <!-- Display total billed money from the database -->
+      <div id="totalBilledMoney">
+        <h2>Total Billed Money:</h2>
+
+   <!--   <?php
+          // Connect to your database and fetch the total billed money
+          $totalBilledMoney = 500.00; // Example value, replace with actual data from the database
+          echo "<p>$" . $totalBilledMoney . "</p>";
+        ?>  -->  
+      </div>
+      <!-- Display payment details from the database -->
+      <div id="paymentDetails">
+        <h2>Payment Details:</h2>
+     <!--     <?php
+          // Connect to your database and fetch payment details
+          // Example data for demonstration purposes
+          $paymentDate = "January 1, 2024";
+          $amountPaid = 100.00;
+          $paymentMethod = "Credit Card";
+          echo "<ul>";
+          echo "<li>Payment Date: " . $paymentDate . "</li>";
+          echo "<li>Amount Paid: $" . $amountPaid . "</li>";
+          echo "<li>Payment Method: " . $paymentMethod . "</li>";
+          echo "</ul>";
+        ?>  --> 
+      </div>
+    </main>
+    
+  <script src="portal.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Gallery</title>
+    <link rel="stylesheet" href="style.css"> <!-- link to your CSS file -->
+</head>
+<body>
+    <section class="header">
+        <label class="logo">FX KILLER</label>
+        <nav class="navigation">
+            <a href="page.html">HOME</a>
+            <a href="about.html">ABOUT US</a>
+            <a href="contact.html">CONTACT</a>    
+            <a href="events.html">EVENTS</a> 
+            <a href="signup.html">SIGN UP</a> 
+            <a href="signin.html">SIGN IN</a>  
+    </section>
+<div class="main">
+    <div class="video-container animated-border">
+      <video src="video1.mp4.mp4" controls></video>
+      <div class="video-description">
+        <p>Bullish trends, characterized by rising prices and positive market sentiment. At our school, we emphasize a comprehensive understanding of bullish trends.</p>
+    </div>
+    </div>
+    <div class="video-container animated-border">
+      <video src="video2.mp4.mp4" controls></video>
+      <div class="video-description">
+        <p>
+            We teach identifying order blocks in trading by focusing on key price levels, supply and demand zones, and market structure analysis.</p>
+    </div>
+    </div>
+    <div class="video-container animated-border">
+      <video src="video3.mp4.mp4" controls></video>
+      <div class="video-description">
+        <p> Teaching bullish breaks of structure through technical analysis, emphasizing price action, trendlines, and confirmation indicators for confident decision-making.</p>
+    </div>
+    </div>
+    <div class="video-container animated-border">
+        <video src="video4.mp4.mp4" controls></video>
+        <div class="video-description">
+			<p>We identify optimal entry points for buying by analyzing technical indicators, chart patterns, and market sentiment, while setting stop-loss levels strategically to manage risk.</p>
+		</div>
+      </div>
+      <div class="video-container animated-border">
+        <video src="video5.mp4.mp4" controls></video>
+        <div class="video-description">
+			<p>
+                We teach identifying liquidity sweeps by analyzing sudden price movements, volume spikes, and order flow dynamics for market entry clarity.</p>
+		</div>
+      </div>
+      <div class="video-container animated-border">
+        <video src="video8.mp4.mp4" controls></video>
+        <div class="video-description">
+			<p>Our experts grasp the gold market intricately, considering history, geopolitics, and macroeconomics, for informed analysis and forecasting.</p>
+		</div>
+      </div>
+    <!-- More video containers -->
+  </div>
+<script>
+    // JavaScript code to toggle video modal
+    const playButtons = document.querySelectorAll('.play-button');
+    const videoModals = document.querySelectorAll('.video-modal');
+    const closeButton = document.querySelectorAll('.close-button');
+
+    playButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            videoModals[index].classList.add('active');
+        });
+    });
+
+    closeButton.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            videoModals[index].classList.remove('active');
+        });
+    });
+</script>
+
+<section class="poster">
+     <div class="poster-container">
+         <img src="fxposter.jpg.jpeg" alt="Image description" class="poster-img">
+        </div>
+         <div class="social-handles">
+            <h4>Follow Us</h4>
+            <a href="https://x.com/FxkillerK50619?t=OuO6Cu5czxfn23MuT2Lt4A&s=09" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
+            <p><ion-icon name="logo-whatsapp"></ion-icon>- 0777871647</p>
+            <a href="https://www.instagram.com/fxkiller_ke?igsh=MWdrdTJ6NHR3bHFtZg==" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+            <div class="contact-us">
+                <div class="contact-information">
+                    <h4>Contact Information</h4>
+                    <p><ion-icon name="mail"></ion-icon><a href="mailto:info@yourforexcompany.com">info@yourforexcompany.com</a></p>
+                    <p><ion-icon name="call"></ion-icon>0700384545</p>
+                </div>
+                
+                </div>
+       
+    </div>
+</section>
+<section class="ContactUs">
+    <div class="contact-us">
+        <div class="contact-information">
+            <h4>Contact Information</h4>
+            <p><ion-icon name="mail"></ion-icon><a href="mailto:info@yourforexcompany.com">info@yourforexcompany.com</a></p>
+            <p><ion-icon name="call"></ion-icon>0700384545</p>
+        </div>
+        
+        </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</section>
+
+
+</body>
+</html>

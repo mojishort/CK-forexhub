@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal</title>
+    <link rel="stylesheet" href="portal.css">
+</head>
+<body>
+    <header>
+        <h1>Student Portal</h1>
+        <ion-icon id="sidebar-toggle" name="grid"></ion-icon>
+        <div class="notification-wrapper">
+          <ion-icon name="notifications-circle-outline" id="notification-bell"></ion-icon>
+          <div class="notification-dropdown">
+            <!-- Notifications content goes here -->
+            <ul>
+              <!-- Notification items will be added dynamically -->
+            </ul>
+          </div>
+          <div class="user-info">
+            <span id="user-name"></span>
+          </div>
+        </div>
+      </header>
+    
+    <nav id="sidebar" class="sidebar">
+      <ul>
+        <li><ion-icon name="home"></ion-icon><a href="portal.html">Dashboard</a></li>
+        <li><ion-icon name="cash-outline"></ion-icon><a href="finances.html">Financials</a></li>
+        <li><ion-icon name="person-circle"></ion-icon><a href="profile.html">Profile</a></li>
+        <li><ion-icon name="settings"></ion-icon><a href="settings.html">Reset Password</a></li>
+    </ul>
+    <div class="logoutbtn">
+      <ion-icon name="log-out" class="log-out"></ion-icon><button id="logoutBtn">Logout</button>
+  </div>
+    </nav>
+
+    <main class="grid-container">
+        <div class="topic1">
+          <h2>Smc Trading Strategy</h2>
+          <p>This is a strategy that focuses on understanding the market movements. It involves concepts like supply and demand, and predicting the price patterns.</p>
+          <button type="submit" class="learn1" id="learn1Button">Learn More</button>
+        </div>
+        <div class="topic2">
+          <h2>Market Psychology</h2>
+          <p>Behavioral tendencies tend to influence trader’s decisions and the price movements within the foreign market exchange.<br>Understanding the market psychology is essential in anticipating the potential market movements and identifying trading opportunities.</p>
+          <button type="submit" class="learn2" id="learn2Button">Learn More</button>
+        </div>
+        <div class="topic3">
+          <h2>Fundamental Analysis</h2>
+          <p>Looking at the forex market requires analyzing economic, social, and political forces that may affect currency prices. Fundamental indicators such as interest rates and the gross domestic product (GDP) growth are key aspects of assessing the overall health and strength of an economy. Understanding these fundamental factors helps you make informed decisions about trading.</p>
+          <button type="submit" class="learn3" id="learn3Button">Learn More</button>.
+        </div>
+        <div class="topic4">
+          <h2>Risk Management</h2>
+          <p>Forex trading can be risky, but with smart money management planning, one can survive. Risk management involves a combination of prudent decision-making and disciplined execution. One key aspect of risk management is position sizing. Incorporating risk management principles can effectively help in enhancing long-term success in the dynamic forex market.</p>      
+          <button type="submit" class="learn4" id="learn4Button">Learn More</button>
+        </div>
+      </main>
+      <div id="message" class="message">
+        <div class="message-content">
+          <span id="messageText"></span>
+          <span id="closeIcon" class="close-icon">&times;</span>
+          <button id="payButton">Pay Now</button>
+        </div>
+      </div>
+      
+      
+
+    <footer>
+    </footer>
+    <script src="portal.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
